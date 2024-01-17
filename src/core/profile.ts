@@ -1,5 +1,5 @@
 import { writeTextFile } from "@tauri-apps/api/fs";
-import { writable } from "svelte/store";
+import { get, writable } from "svelte/store";
 import { APP_DATA_DIR } from "~/constants";
 import { readJson } from "~/utils/json";
 
@@ -17,7 +17,7 @@ export const profile = {
 		});
 	},
 	async save() {
-		const json = JSON.stringify(profile, null, 2) + "\n";
+		const json = JSON.stringify(get(profile), null, 2) + "\n";
 		await writeTextFile(modsJsonPath, json);
 	},
 };

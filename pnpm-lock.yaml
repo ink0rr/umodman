@@ -37,7 +37,7 @@ dependencies:
     version: 0.1.20(tailwindcss@3.4.1)
   tauri-plugin-upload-api:
     specifier: github:tauri-apps/tauri-plugin-upload#v1
-    version: github.com/tauri-apps/tauri-plugin-upload/7b97b5c04838922a8b69892b3e39219d5b42835e
+    version: github.com/tauri-apps/tauri-plugin-upload/8e8f120ea7c90a51fb5498f24d42f1884a49ec4d
 
 devDependencies:
   '@sveltejs/adapter-static':
@@ -2772,8 +2772,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  github.com/tauri-apps/tauri-plugin-upload/7b97b5c04838922a8b69892b3e39219d5b42835e:
-    resolution: {tarball: https://codeload.github.com/tauri-apps/tauri-plugin-upload/tar.gz/7b97b5c04838922a8b69892b3e39219d5b42835e}
+  github.com/tauri-apps/tauri-plugin-upload/8e8f120ea7c90a51fb5498f24d42f1884a49ec4d:
+    resolution: {tarball: https://codeload.github.com/tauri-apps/tauri-plugin-upload/tar.gz/8e8f120ea7c90a51fb5498f24d42f1884a49ec4d}
     name: tauri-plugin-upload-api
     version: 0.0.0
     dependencies:

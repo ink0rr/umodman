@@ -18,9 +18,6 @@ export const downloader = {
 		const profileDir = `${APP_DATA_DIR}/lethal-company/profiles/Default`;
 		await createDir(profileDir, { recursive: true });
 
-		// weird tauri-plugin-upload-api bug
-		await download("https://empty.deno.dev", `${APP_DATA_DIR}/.ignore`);
-
 		const mods = [mod].concat(resolveDependencies(modList, mod));
 		await Promise.allSettled(mods.map((dep) => installMod(profileDir, dep)));
 

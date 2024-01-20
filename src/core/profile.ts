@@ -33,6 +33,11 @@ export const profile = {
 		});
 		await this.save();
 	},
+	async uninstallAll() {
+		update(() => ({}));
+		const path = `${APP_DATA_DIR}/lethal-company/profiles/Default`;
+		await removeDir(path, { recursive: true });
+	},
 	async save() {
 		const json = JSON.stringify(get(profile), null, 2) + "\n";
 		await writeTextFile(modsJsonPath, json);

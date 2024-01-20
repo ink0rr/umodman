@@ -43,10 +43,10 @@
 				</Dialog.Trigger>
 				<Dialog.Content>
 					<Dialog.Header>
-						<Dialog.Title>Uninstall</Dialog.Title>
+						<Dialog.Title>Confirmation</Dialog.Title>
 					</Dialog.Header>
 					<span>Are you sure you want to uninstall {mod.name}?</span>
-					<Button variant="outline" on:click={uninstall}>Uninstall</Button>
+					<Button variant="destructive" on:click={uninstall}>Uninstall</Button>
 				</Dialog.Content>
 			</Dialog.Root>
 			<Button variant="outline" on:click={openWebsite}>Website</Button>

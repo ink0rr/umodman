@@ -1,9 +1,9 @@
 <script lang="ts">
 	import * as Accordion from "~/components/ui/accordion";
-	import { Button } from "~/components/ui/button";
 	import { Input } from "~/components/ui/input";
 	import { modList, type ModVersion } from "~/core/mods";
 	import { profile } from "~/core/profile";
+	import InstalledMod from "./InstalledMod.svelte";
 
 	let search = "";
 	let installed: ModVersion[];
@@ -20,10 +20,6 @@
 		}
 	}
 	$: filtered = installed.filter(({ full_name }) => full_name.match(new RegExp(search, "i")));
-
-	const uninstall = (mod: ModVersion) => {
-		// TODO
-	};
 </script>
 
 <div class="flex max-h-screen flex-col">
@@ -34,27 +30,7 @@
 	<div class="overflow-y-scroll">
 		<Accordion.Root multiple>
 			{#each filtered as mod (mod.uuid4)}
-				<Accordion.Item value={mod.uuid4}>
-					<Accordion.Trigger class="p-4">
-						<div class="flex flex-row items-center gap-4">
-							<img src={mod.icon} alt={mod.full_name} width={64} height={64} />
-							<span>{mod.full_name}</span>
-						</div>
-					</Accordion.Trigger>
-					<Accordion.Content class="flex flex-col px-4">
-						<p class="mb-2">{mod.description}</p>
-						<div class="flex flex-row gap-2">
-							<Button
-								variant="outline"
-								on:click={() => {
-									uninstall(mod);
-								}}
-							>
-								Uninstall
-							</Button>
-						</div>
-					</Accordion.Content>
-				</Accordion.Item>
+				<InstalledMod {mod} />
 			{/each}
 		</Accordion.Root>
 	</div>
